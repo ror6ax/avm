@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from distutils.core import setup
+import setuptools  # noqa
 from os import environ
 
 setup(name='avm',
@@ -8,6 +9,8 @@ setup(name='avm',
       description='AWS profile switching tool',
       author='Gregory Reshetniak',
       author_email='ror6ax@gmail.com',
-      dependencies=['inquirer'],
+      install_requires=[
+          'inquirer',
+      ],
       packages=['avm'],
       scripts=['avm/bin/avm'])
