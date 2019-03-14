@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+import inquirer
+import configparser
+from csv import DictReader
+from sys import argv
+from os import environ
+from os.path import expanduser
+
+config = configparser.ConfigParser()
+home = expanduser('~')
+home_creds = home + '/.aws/credentials'
+config.read(home_creds)
+
+profiles = [
+    inquirer.List(
+        'profile',
+        message="Select a profile to set as default",
+        choices=config.sections(),
+    ),
+]
+
+def magic(new_profile_name):
+    if new_profile_name in config:
+        new_profile_name_default = config[str(new_profile_name)]
+        config['default'] = new_profile_name_default
+        with open(home_creds, 'w') as configfile:
+            config.write(configfile)
+        print(f'AWS profile `{new_profile_name}` has been set as default')
+    else:
+        print(f'AWS profile `{new_profile_name}` not found')
+        exit(1)
+
+try:
+    new_profile_name = argv[1]
+    magic(new_profile_name)
+except IndexError:
+    selected_new_profile_name = inquirer.prompt(profiles)
+    magic(selected_new_profile_name['profile'])
