@@ -13,5 +13,5 @@ deploy:
     secure: kbuV97ZXYPpIy39My5PlcAb3BzOBd7K/O6+qX9pAOYl4l+UMywy0mmt0mmxYl+TjwzVzAToADxUFGYCrgmxq3nDK+Gn1r9p0D0nFGzgIAbdeuo+3NwUYXp37GyIwb77noP4BsdF5KlO4OqqC35cXTfXMniNkd0ZY8OQE5rUQPDsQNUsfAs+x9dDQ+b8EWHL+7llt2zD2GgfhcNymW+Qnx8vpsdbdRFolociaAYKaR7nxEqNQeWiHXepxmMHJAgV/HIzoxst0I6fHSvvZRe2jI9z7r/4pgj1l7sXR2lO07WlIUJyi8cUESlKSuRCm+rcBLCncVIWEIMwuSelC+3gVGCOtsJHYt/yoGJSfnq6FbjCB/m+eMYJiN0V3yC0/aZFkB35/OGch15J6Ak32WRaWra4ape+zYltrZj6qtqcLyeFHBNaIlhJ20jk7lFrMuZKltjX2LtXHRwGsMqK7SIb7n8cJ2Rt3iemjGIqlXPkCxKpamaKnwk0gBSCXfMPnr9pnMhNjpgYtvThg1jdq1yc45Cicu7Scm2FnptaqQuBuqjrHQZ9mEA19ty2RE5hbyajH48xUGD5ps93TZgCZMIcYJXdh3OiD41P+EQEttaavbSRa/VoSRxDLKl67sLqRUgHDvjwDjhsJIJQuTatM+dvpCcSN8eoueqUIY2xcCNyraBA=
   distributions: sdist bdist_wheel
   on:
-    branch: master
+    tags: true
     python: 3.6
